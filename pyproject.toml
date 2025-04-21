@@ -1,0 +1,25 @@
+[project]
+name = "cocollama"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { email = "paul.brehat@student-cs.fr" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32.3",
+]
+
+[project.scripts]
+cocollama = "cocollama:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "isort>=6.0.1",
+    "ruff>=0.11.6",
+]

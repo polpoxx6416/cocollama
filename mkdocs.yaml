@@ -1,0 +1,13 @@
+site_name: Cocollama
+site_description: CLI tool for running Ollama models
+theme: readthedocs
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+
+nav:
+  - Home: index.md
+  - Usage: usage.md
+  - API Reference: api.md

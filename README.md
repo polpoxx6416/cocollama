@@ -1,0 +1,1 @@
+Cocollama is a nice CLI to use commands while chatting with an LLM hosted on Ollama. 
