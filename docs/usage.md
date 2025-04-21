@@ -11,3 +11,7 @@ to chat with your model just run `chat <your_query>` in the ollama cli.
 You can easily change the way your query is formatted in the `extract_command` method from `OllamaShell`.
 
 Default model is set to `gemma3:1b`.
+
+It is better to run with [uv](https://docs.astral.sh/uv/) with `uv pip install -e .`. 
+
+I hope you enjoy this side project (made with the useful help of [Claude](https://claude.ai)).

@@ -1,6 +1,6 @@
 Cocollama is a nice CLI to use commands while chatting with an LLM hosted on Ollama. 
 
-Just run cocollama after pip installing it. 
+Just run cocollama after pip installing it `pip install -e .`
 
 Then run `cocollama` to start the cli. Then run `chat <query> $(cmd)` to run a cmd and put its output inside your query.
 
