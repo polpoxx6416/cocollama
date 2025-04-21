@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cocollama = "cocollama:main"
+cocollama = "cocollama.cli:main"
 
 [build-system]
 requires = ["hatchling"]
