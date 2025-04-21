@@ -2,7 +2,7 @@
 
 
 ## CLI
-:::cocollama.cli
+::: cocollama.cli
 
 ## Core Module
 ::: cocollama.cocollama
