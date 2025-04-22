@@ -5,8 +5,8 @@
 ::: cocollama.cli
     show_source: true
     show_bases: false
-    show_root_heading: true
-    heading_level: 2
+    show_root_heading: false
+    heading_level: 0
 
 ## Core Module
 ::: cocollama.cocollama

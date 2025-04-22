@@ -51,7 +51,7 @@ class OllamaShell(cmd.Cmd):
                 "stream": True,
             }
 
-            print(f"\n[Prompt]: {processed_arg}\n[Response]:")
+            # print(f"\n[Prompt]: {processed_arg}\n[Response]:")
             self._stream_response(data)
             
         except KeyboardInterrupt:
