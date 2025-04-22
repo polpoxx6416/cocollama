@@ -20,7 +20,7 @@ class OllamaShell(cmd.Cmd):
         self.port = port
         self.base_url = f"http://{self.host}:{self.port}"
         self.intro = f"Ollama CLI - Connected to {self.base_url} - Using {model}"
-        self.prompt = f"{model.split(':')[0]}> "
+        self.prompt = "cocollama> "
         self.last_response = ""
         self.check_connection()
     
@@ -199,6 +199,31 @@ class OllamaShell(cmd.Cmd):
         """Exit the program"""
         print("Goodbye!")
         return True
+    
+    def do_pull(self, arg: str) -> None:
+        """Pull model from Ollama: pull <model_name>"""
+        if not arg:
+            print(f"Current model: {self.model}")
+            return
+        
+        data = {"model": arg, "stream": True}
+        url = urljoin(self.base_url, "/api/pull")
+        
+        try:
+            with requests.post(url=url, json=data, stream=True) as response:
+                response.raise_for_status()
+                for line in response.iter_lines():
+                    if line:
+                        update = json.loads(line)
+                        status = update.get("status")
+                        if status:
+                            print(status)
+        except requests.exceptions.HTTPError as e:
+            print(f"HTTP Error: {e}")
+        except json.JSONDecodeError:
+            print("Error parsing response")
+        except Exception as e:
+            print(f"Exception: {e}")
     
     # Command aliases
     do_quit = do_exit
