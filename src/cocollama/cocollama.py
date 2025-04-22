@@ -225,6 +225,27 @@ class OllamaShell(cmd.Cmd):
         except Exception as e:
             print(f"Exception: {e}")
     
+    def do_remove(self, arg: str) -> None:
+        f"""Remove model from {self.host}: remove <model_name>"""
+        if not arg : 
+            print(f"Current model: {self.model}")
+            return
+
+        url = urljoin(self.base_url, "/api/delete")
+        data = {"model": arg}
+
+        try:
+            with requests.delete(url=url, json=data) as response :
+                response.raise_for_status()
+                result = response.json()
+                print(result)
+        except requests.exceptions.HTTPError as e:
+            print(f"HTTP Error: {e}")
+        except json.JSONDecodeError:
+            print("Error parsing response")
+        except Exception as e:
+            print(f"Exception: {e}")
+    
     # Command aliases
     do_quit = do_exit
     do_ls = do_list
