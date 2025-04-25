@@ -22,3 +22,7 @@ If you want a specific model : `pull <model_name>`.
 You can easily change the way your query is formatted in the `extract_command` method from `OllamaShell`.
 
 Default model is set to `gemma3:1b`.
+
+## Improvements
+
+- Take history as context
